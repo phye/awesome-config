@@ -165,11 +165,11 @@ function hotkeys:init(args)
 	------------------------------------------------------------
 	local apprunner_keys_move = {
 		{
-			{ env.mod }, "k", function() apprunner:down() end,
+			{ env.mod }, "j", function() apprunner:down() end,
 			{ description = "Select next item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "i", function() apprunner:up() end,
+			{ env.mod }, "k", function() apprunner:up() end,
 			{ description = "Select previous item", group = "Navigation" }
 		},
 	}
@@ -181,15 +181,15 @@ function hotkeys:init(args)
 	------------------------------------------------------------
 	local menu_keys_move = {
 		{
-			{ env.mod }, "k", redflat.menu.action.down,
+			{ env.mod }, "j", redflat.menu.action.down,
 			{ description = "Select next item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "i", redflat.menu.action.up,
+			{ env.mod }, "k", redflat.menu.action.up,
 			{ description = "Select previous item", group = "Navigation" }
 		},
 		{
-			{ env.mod }, "j", redflat.menu.action.back,
+			{ env.mod }, "h", redflat.menu.action.back,
 			{ description = "Go back", group = "Navigation" }
 		},
 		{
@@ -338,15 +338,15 @@ function hotkeys:init(args)
 			{ description = "Increase master width factor", group = "Layout" }
 		},
 		{
-			{ env.mod }, "j", function () awful.tag.incmwfact(-0.05) end,
+			{ env.mod }, "h", function () awful.tag.incmwfact(-0.05) end,
 			{ description = "Decrease master width factor", group = "Layout" }
 		},
 		{
-			{ env.mod }, "i", function () awful.client.incwfact( 0.05) end,
+			{ env.mod }, "k", function () awful.client.incwfact( 0.05) end,
 			{ description = "Increase window factor of a client", group = "Layout" }
 		},
 		{
-			{ env.mod }, "k", function () awful.client.incwfact(-0.05) end,
+			{ env.mod }, "j", function () awful.client.incwfact(-0.05) end,
 			{ description = "Decrease window factor of a client", group = "Layout" }
 		},
 		{
@@ -407,15 +407,15 @@ function hotkeys:init(args)
 
 	local layout_grid_resize = {
 		{
-			{ "Mod4" }, "i", function() grid.resize_to("up") end,
+			{ "Mod4" }, "k", function() grid.resize_to("up") end,
 			{ description = "Inrease window size to the up", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "k", function() grid.resize_to("down") end,
+			{ "Mod4" }, "j", function() grid.resize_to("down") end,
 			{ description = "Inrease window size to the down", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "j", function() grid.resize_to("left") end,
+			{ "Mod4" }, "h", function() grid.resize_to("left") end,
 			{ description = "Inrease window size to the left", group = "Resize" }
 		},
 		{
@@ -423,15 +423,15 @@ function hotkeys:init(args)
 			{ description = "Inrease window size to the right", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Shift" }, "i", function() grid.resize_to("up", nil, true) end,
+			{ "Mod4", "Shift" }, "k", function() grid.resize_to("up", nil, true) end,
 			{ description = "Decrease window size from the up", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Shift" }, "k", function() grid.resize_to("down", nil, true) end,
+			{ "Mod4", "Shift" }, "j", function() grid.resize_to("down", nil, true) end,
 			{ description = "Decrease window size from the down", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Shift" }, "j", function() grid.resize_to("left", nil, true) end,
+			{ "Mod4", "Shift" }, "h", function() grid.resize_to("left", nil, true) end,
 			{ description = "Decrease window size from the left", group = "Resize" }
 		},
 		{
@@ -439,15 +439,15 @@ function hotkeys:init(args)
 			{ description = "Decrease window size from the right", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "i", function() grid.resize_to("up", true) end,
+			{ "Mod4", "Control" }, "k", function() grid.resize_to("up", true) end,
 			{ description = "Increase window size to the up by bound", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "k", function() grid.resize_to("down", true) end,
+			{ "Mod4", "Control" }, "j", function() grid.resize_to("down", true) end,
 			{ description = "Increase window size to the down by bound", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "j", function() grid.resize_to("left", true) end,
+			{ "Mod4", "Control" }, "h", function() grid.resize_to("left", true) end,
 			{ description = "Increase window size to the left by bound", group = "Resize" }
 		},
 		{
@@ -455,15 +455,15 @@ function hotkeys:init(args)
 			{ description = "Increase window size to the right by bound", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control", "Shift" }, "i", function() grid.resize_to("up", true, true) end,
+			{ "Mod4", "Control", "Shift" }, "k", function() grid.resize_to("up", true, true) end,
 			{ description = "Decrease window size from the up by bound ", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control", "Shift" }, "k", function() grid.resize_to("down", true, true) end,
+			{ "Mod4", "Control", "Shift" }, "j", function() grid.resize_to("down", true, true) end,
 			{ description = "Decrease window size from the down by bound ", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control", "Shift" }, "j", function() grid.resize_to("left", true, true) end,
+			{ "Mod4", "Control", "Shift" }, "h", function() grid.resize_to("left", true, true) end,
 			{ description = "Decrease window size from the left by bound ", group = "Resize" }
 		},
 		{
@@ -541,35 +541,35 @@ function hotkeys:init(args)
 
 	local layout_map_resize = {
 		{
-			{ "Mod4" }, "j", function() map.incfactor(nil, 0.1, false) end,
+			{ "Mod4" }, "l", function() map.incfactor(nil, 0.1, false) end,
 			{ description = "Increase window horizontal size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "l", function() map.incfactor(nil, -0.1, false) end,
+			{ "Mod4" }, "h", function() map.incfactor(nil, -0.1, false) end,
 			{ description = "Decrease window horizontal size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "i", function() map.incfactor(nil, 0.1, true) end,
+			{ "Mod4" }, "k", function() map.incfactor(nil, 0.1, true) end,
 			{ description = "Increase window vertical size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "k", function() map.incfactor(nil, -0.1, true) end,
+			{ "Mod4" }, "j", function() map.incfactor(nil, -0.1, true) end,
 			{ description = "Decrease window vertical size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "j", function() map.incfactor(nil, 0.1, false, true) end,
+			{ "Mod4", "Control" }, "l", function() map.incfactor(nil, 0.1, false, true) end,
 			{ description = "Increase group horizontal size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "l", function() map.incfactor(nil, -0.1, false, true) end,
+			{ "Mod4", "Control" }, "h", function() map.incfactor(nil, -0.1, false, true) end,
 			{ description = "Decrease group horizontal size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "i", function() map.incfactor(nil, 0.1, true, true) end,
+			{ "Mod4", "Control" }, "k", function() map.incfactor(nil, 0.1, true, true) end,
 			{ description = "Increase group vertical size factor", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Control" }, "k", function() map.incfactor(nil, -0.1, true, true) end,
+			{ "Mod4", "Control" }, "j", function() map.incfactor(nil, -0.1, true, true) end,
 			{ description = "Decrease group vertical size factor", group = "Resize" }
 		},
 	}
@@ -616,15 +616,15 @@ function hotkeys:init(args)
 			{ description = "Go to right client", group = "Client focus" }
 		},
 		{
-			{ env.mod }, "j", focus_switch_byd("left"),
+			{ env.mod }, "h", focus_switch_byd("left"),
 			{ description = "Go to left client", group = "Client focus" }
 		},
 		{
-			{ env.mod }, "i", focus_switch_byd("up"),
+			{ env.mod }, "k", focus_switch_byd("up"),
 			{ description = "Go to upper client", group = "Client focus" }
 		},
 		{
-			{ env.mod }, "k", focus_switch_byd("down"),
+			{ env.mod }, "j", focus_switch_byd("down"),
 			{ description = "Go to lower client", group = "Client focus" }
 		},
 		{
@@ -726,11 +726,11 @@ function hotkeys:init(args)
 		},
 
 		{
-			{}, "XF86AudioRaiseVolume", volume_raise,
+			{ env.mod, "Shift" }, "=", volume_raise,
 			{ description = "Increase volume", group = "Volume control" }
 		},
 		{
-			{}, "XF86AudioLowerVolume", volume_lower,
+			{ env.mod }, "-", volume_lower,
 			{ description = "Reduce volume", group = "Volume control" }
 		},
 		{
@@ -747,11 +747,11 @@ function hotkeys:init(args)
 			{ description = "Play/Pause track", group = "Audio player" }
 		},
 		{
-			{}, "XF86AudioNext", function() redflat.float.player:action("Next") end,
+			{ env.mod, "Shift" }, ".", function() redflat.float.player:action("Next") end,
 			{ description = "Next track", group = "Audio player" }
 		},
 		{
-			{}, "XF86AudioPrev", function() redflat.float.player:action("Previous") end,
+			{ env.mod, "Shift" }, ",", function() redflat.float.player:action("Previous") end,
 			{ description = "Previous track", group = "Audio player" }
 		},
 
