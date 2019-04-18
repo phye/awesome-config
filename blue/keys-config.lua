@@ -411,31 +411,31 @@ function hotkeys:init(args)
 			{ description = "Inrease window size to the up", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "j", function() grid.resize_to("down") end,
+			{ "Mod4" }, "j", function() grid.resize_to("up", nil, true) end,
+			{ description = "Decrease window size from the up", group = "Resize" }
+		},
+		{
+			{ "Mod4", "Shift" }, "j", function() grid.resize_to("down") end,
 			{ description = "Inrease window size to the down", group = "Resize" }
+		},
+		{
+			{ "Mod4", "Shift" }, "k", function() grid.resize_to("down", nil, true) end,
+			{ description = "Decrease window size from the down", group = "Resize" }
 		},
 		{
 			{ "Mod4" }, "h", function() grid.resize_to("left") end,
 			{ description = "Inrease window size to the left", group = "Resize" }
 		},
 		{
-			{ "Mod4" }, "l", function() grid.resize_to("right") end,
-			{ description = "Inrease window size to the right", group = "Resize" }
-		},
-		{
-			{ "Mod4", "Shift" }, "k", function() grid.resize_to("up", nil, true) end,
-			{ description = "Decrease window size from the up", group = "Resize" }
-		},
-		{
-			{ "Mod4", "Shift" }, "j", function() grid.resize_to("down", nil, true) end,
-			{ description = "Decrease window size from the down", group = "Resize" }
-		},
-		{
-			{ "Mod4", "Shift" }, "h", function() grid.resize_to("left", nil, true) end,
+			{ "Mod4" }, "l", function() grid.resize_to("left", nil, true) end,
 			{ description = "Decrease window size from the left", group = "Resize" }
 		},
 		{
-			{ "Mod4", "Shift" }, "l", function() grid.resize_to("right", nil, true) end,
+			{ "Mod4", "Shift" }, "l", function() grid.resize_to("right") end,
+			{ description = "Inrease window size to the right", group = "Resize" }
+		},
+		{
+			{ "Mod4", "Shift" }, "h", function() grid.resize_to("right", nil, true) end,
 			{ description = "Decrease window size from the right", group = "Resize" }
 		},
 		{
