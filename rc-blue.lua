@@ -28,7 +28,9 @@ require("blue.ercheck-config") -- load file with error handling
 -- Setup theme and environment vars
 -----------------------------------------------------------------------------------------------------------------------
 local env = require("blue.env-config") -- load file with environment
-env:init({ theme = "blue" })
+env:init({ theme = "blue",
+           terminal = "konsole",
+           player = "netease-cloud-music"})
 
 
 -- Layouts setup
@@ -64,6 +66,9 @@ tasklist.buttons = awful.util.table.join(
 	awful.button({}, 4, redflat.widget.tasklist.action.switch_next),
 	awful.button({}, 5, redflat.widget.tasklist.action.switch_prev)
 )
+
+-- The numbers (1..5) below is for mouse keys
+-- 1 : left click, 2 : right click, 3 : middle click
 
 -- Taglist widget
 --------------------------------------------------------------------------------
@@ -174,7 +179,7 @@ sysmon.widget.battery = redflat.widget.sysmon(
 -- network speed
 sysmon.widget.network = redflat.widget.net(
 	{
-		interface = "wlp60s0",
+		interface = "enp6s0",
 		alert = { up = 5 * 1024^2, down = 5 * 1024^2 },
 		speed = { up = 6 * 1024^2, down = 6 * 1024^2 },
 		autoscale = false
@@ -254,10 +259,12 @@ awful.screen.connect_for_each_screen(
 			{ -- right widgets
 				layout = wibox.layout.fixed.horizontal,
 
-				separator,
-				env.wrapper(mail.widget, "mail", mail.buttons),
+				-- separator,
+				-- env.wrapper(mail.widget, "mail", mail.buttons),
 				separator,
 				env.wrapper(kbindicator.widget, "keyboard", kbindicator.buttons),
+				separator,
+				env.wrapper(tray.widget, "tray", tray.buttons),
 				separator,
 				env.wrapper(sysmon.widget.network, "network"),
 				separator,
@@ -266,10 +273,8 @@ awful.screen.connect_for_each_screen(
 				env.wrapper(volume.widget, "volume", volume.buttons),
 				separator,
 				env.wrapper(textclock.widget, "textclock"),
-				separator,
-				env.wrapper(tray.widget, "tray", tray.buttons),
-				separator,
-				env.wrapper(sysmon.widget.battery, "battery"),
+				-- separator,
+				-- env.wrapper(sysmon.widget.battery, "battery"),
 			},
 		}
 	end

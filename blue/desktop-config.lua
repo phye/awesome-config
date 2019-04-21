@@ -33,7 +33,7 @@ function desktop:init(args)
 	local netspeed = { geometry = wgeometry(grid, places.netspeed, workarea) }
 
 	netspeed.args = {
-		interface    = "wlp60s0",
+		interface    = "enp6s0",
 		maxspeed     = { up = 6*1024^2, down = 6*1024^2 },
 		crit         = { up = 6*1024^2, down = 6*1024^2 },
 		timeout      = 2,
@@ -47,7 +47,7 @@ function desktop:init(args)
 	local ssdspeed = { geometry = wgeometry(grid, places.ssdspeed, workarea) }
 
 	ssdspeed.args = {
-		interface = "nvme0n1",
+		interface = "sdb",
 		meter_function = system.disk_speed,
 		timeout   = 2,
 		label     = "SOLID DRIVE"
@@ -62,7 +62,7 @@ function desktop:init(args)
 	local hddspeed = { geometry = wgeometry(grid, places.hddspeed, workarea) }
 
 	hddspeed.args = {
-		interface = "sda",
+		interface = "sdc",
 		meter_function = system.disk_speed,
 		timeout = 2,
 		label = "HARD DRIVE"
