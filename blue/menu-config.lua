@@ -50,14 +50,13 @@ function menu:init(args)
 	-- Places submenu
 	------------------------------------------------------------
 	local placesmenu = {
-		{ "Documents",   env.fm .. " Documents", micon("folder-documents") },
+		{ "Workspace",   env.fm .. " /home/phye/ws/", micon("folder-download")  },
+		{ "Notes",       env.fm .. " /home/phye/ws/OrgNotes/", micon("folder-documents") },
 		{ "Downloads",   env.fm .. " Downloads", micon("folder-download")  },
-		{ "Music",       env.fm .. " Music",     micon("folder-music")     },
-		{ "Pictures",    env.fm .. " Pictures",  micon("folder-pictures")  },
-		{ "Videos",      env.fm .. " Videos",    micon("folder-videos")    },
+		{ "Documents",   env.fm .. " Documents", micon("folder-documents") },
 		separator,
-		{ "Media",       env.fm .. " /mnt/media", micon("folder-bookmarks") },
-		{ "Storage",     env.fm .. " /opt",       micon("folder-bookmarks") },
+		{ "Videos",      env.fm .. " /mnt/Download/Videos/",    micon("folder-videos")    },
+		{ "Media",       env.fm .. " /mnt/Download/", micon("folder-bookmarks") },
 	}
 
 	-- Exit submenu
@@ -77,8 +76,8 @@ function menu:init(args)
 			{ "Applications",  appmenu,     micon("distributor-logo") },
 			{ "Places",        placesmenu,  micon("folder_home"), key = "c" },
 			separator,
-			{ "Firefox", "firefox", micon("firefox") },
-			{ "Nemo",    "nemo",    micon("folder") },
+			{ "Chrome",  "google-chrome-stable", micon("chrome") },
+			{ "Folders", "nemo",    micon("folder") },
 			{ "Emacs",   "emacs",   micon("emacs") },
 			separator,
 			{ "Exit",     exitmenu,       micon("exit") },
