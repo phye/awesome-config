@@ -637,7 +637,7 @@ function hotkeys:init(args)
 		},
 
 		{
-			{ env.mod, "Control" }, "w", function() mainmenu:show() end,
+			{ env.mod }, "w", function() mainmenu:show() end,
 			{ description = "Show main menu", group = "Widgets" }
 		},
 		{
